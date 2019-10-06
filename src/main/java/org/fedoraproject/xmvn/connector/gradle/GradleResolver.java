@@ -175,8 +175,8 @@ public class GradleResolver
     {
         ModuleVersionIdentifier moduleId =
             ( (DefaultModuleComponentArtifactMetadata) artifact ).toArtifactIdentifier().getModuleVersionIdentifier();
-        String groupId = moduleId.getGroup();
-        String artifactId = artifact.getName().getName();
+        String groupId = ( (DefaultModuleComponentArtifactMetadata) artifact ).getId().getComponentIdentifier().getGroup();
+        String artifactId =( (DefaultModuleComponentArtifactMetadata) artifact ).getId().getComponentIdentifier().getModule();
         String extension = artifact.getName().getExtension();
         String classifier = artifact.getName().getClassifier();
         String version = moduleId.getVersion();
