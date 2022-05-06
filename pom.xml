@@ -82,8 +82,6 @@
     <groovyVersion>2.5.8</groovyVersion>
     <slf4jVersion>2.0.0-alpha2</slf4jVersion>
     <xmvnVersion>3.1.0</xmvnVersion>
-    <junitVersion>5.7.2</junitVersion>
-    <easymockVersion>4.3</easymockVersion>
     <compilerPluginVersion>3.8.1</compilerPluginVersion>
     <surefireVersion>3.0.0-M5</surefireVersion>
   </properties>
@@ -164,24 +162,6 @@
       <artifactId>javax.inject</artifactId>
       <version>${atinjectVersion}</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>${junitVersion}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.easymock</groupId>
-      <artifactId>easymock</artifactId>
-      <version>${easymockVersion}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>${slf4jVersion}</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
