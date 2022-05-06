@@ -50,23 +50,14 @@
       <timezone>+1</timezone>
     </developer>
   </developers>
-  <mailingLists>
-    <mailingList>
-      <name>Fedora Java development List</name>
-      <post>java-devel@lists.fedoraproject.org</post>
-      <archive>http://lists.fedoraproject.org/pipermail/java-devel/</archive>
-      <subscribe>https://admin.fedoraproject.org/mailman/listinfo/java-devel</subscribe>
-      <unsubscribe>https://admin.fedoraproject.org/mailman/listinfo/java-devel</unsubscribe>
-    </mailingList>
-  </mailingLists>
   <scm>
-    <url>https://github.com/fedora-java/xmvn-connector-ivy</url>
-    <connection>scm:git:https://github.com/fedora-java/xmvn-connector-ivy.git</connection>
-    <developerConnection>scm:git:git@github.com:fedora-java/xmvn-connector-ivy.git</developerConnection>
+    <url>https://github.com/fridrich/xmvn-connector-gradle</url>
+    <connection>scm:git:https://github.com/fridrich/xmvn-connector-gradle.git</connection>
+    <developerConnection>scm:git:git@github.com:fridrich/xmvn-connector-gradle.git</developerConnection>
   </scm>
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/fedora-java/xmvn-connector-ivy/issues/</url>
+    <url>https://github.com/fridrich/xmvn-connector-gradle/issues/</url>
   </issueManagement>
   <distributionManagement>
     <snapshotRepository>
