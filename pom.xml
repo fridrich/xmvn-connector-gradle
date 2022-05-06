@@ -19,83 +19,184 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>xmvn-parent</artifactId>
-    <groupId>org.fedoraproject.xmvn</groupId>
-    <version>4.0.0-SNAPSHOT</version>
-    <relativePath>../xmvn-parent</relativePath>
-  </parent>
+  <groupId>org.fedoraproject.xmvn</groupId>
   <artifactId>xmvn-connector-gradle</artifactId>
+  <version>4.0.0-SNAPSHOT</version>
   <name>XMvn Connector for Gradle</name>
   <description>
     XMvn Connector for Gradle provides integration of Gradle with
     XMvn.  It provides an adapter which allows XMvn resolver to be
     used as Gradle resolver.
   </description>
+  <url>https://fedora-java.github.io/xmvn/</url>
+  <inceptionYear>2012</inceptionYear>
+  <organization>
+    <name>Red Hat, Inc.</name>
+    <url>http://www.redhat.com/</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Apache License Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>mizdebsk</id>
+      <name>Mikolaj Izdebski</name>
+      <email>mizdebsk@redhat.com</email>
+      <organization>Red Hat, Inc.</organization>
+      <organizationUrl>http://www.redhat.com/</organizationUrl>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+  <mailingLists>
+    <mailingList>
+      <name>Fedora Java development List</name>
+      <post>java-devel@lists.fedoraproject.org</post>
+      <archive>http://lists.fedoraproject.org/pipermail/java-devel/</archive>
+      <subscribe>https://admin.fedoraproject.org/mailman/listinfo/java-devel</subscribe>
+      <unsubscribe>https://admin.fedoraproject.org/mailman/listinfo/java-devel</unsubscribe>
+    </mailingList>
+  </mailingLists>
+  <scm>
+    <url>https://github.com/fedora-java/xmvn-connector-ivy</url>
+    <connection>scm:git:https://github.com/fedora-java/xmvn-connector-ivy.git</connection>
+    <developerConnection>scm:git:git@github.com:fedora-java/xmvn-connector-ivy.git</developerConnection>
+  </scm>
+  <issueManagement>
+    <system>Github</system>
+    <url>https://github.com/fedora-java/xmvn-connector-ivy/issues/</url>
+  </issueManagement>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <properties>
+    <project.build.sourceEncoding>US-ASCII</project.build.sourceEncoding>
+    <atinjectVersion>1</atinjectVersion>
+    <ivyVersion>2.5.0</ivyVersion>
+    <gradleVersion>4.5.1</gradleVersion>
+    <groovyVersion>2.5.8</groovyVersion>
+    <slf4jVersion>2.0.0-alpha2</slf4jVersion>
+    <xmvnVersion>3.1.0</xmvnVersion>
+    <junitVersion>5.7.2</junitVersion>
+    <easymockVersion>4.3</easymockVersion>
+    <compilerPluginVersion>3.8.1</compilerPluginVersion>
+    <surefireVersion>3.0.0-M5</surefireVersion>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>org.fedoraproject.xmvn</groupId>
       <artifactId>xmvn-api</artifactId>
+      <version>${xmvnVersion}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
+      <version>${slf4jVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-base-services</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-base-services-groovy</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-core-api</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-core</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-model-core</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-dependency-management</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-resources</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.gradle</groupId>
       <artifactId>gradle-logging</artifactId>
+      <version>${gradleVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.ivy</groupId>
       <artifactId>ivy</artifactId>
+      <version>${ivyVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy</artifactId>
+      <version>${groovyVersion}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>javax.inject</groupId>
       <artifactId>javax.inject</artifactId>
+      <version>${atinjectVersion}</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junitVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>${easymockVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4jVersion}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${compilerPluginVersion}</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${surefireVersion}</version>
+      </plugin>
+    </plugins>
+  </build>
 </project>
