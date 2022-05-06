@@ -28,6 +28,6 @@
     XMvn third-party libraries parent pom
   </description>
   <properties>
-    <gradleVersion>4.5.1</gradleVersion>
+    <gradleVersion>4.4.1</gradleVersion>
   </properties>
 </project>
