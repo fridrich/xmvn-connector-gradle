@@ -20,10 +20,10 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>xmvn-parent</artifactId>
     <groupId>org.fedoraproject.xmvn</groupId>
+    <artifactId>libs-parent</artifactId>
     <version>4.0.0-SNAPSHOT</version>
-    <relativePath>../xmvn-parent</relativePath>
+    <relativePath>./libs-parent</relativePath>
   </parent>
   <artifactId>libs</artifactId>
   <packaging>pom</packaging>
@@ -42,6 +42,7 @@
     <module>gradle-dependency-management</module>
     <module>gradle-resources</module>
     <module>gradle-logging</module>
+    <module>libs-parent</module>
   </modules>
   <dependencies>
     <dependency>
