@@ -69,7 +69,7 @@
     <project.build.sourceEncoding>US-ASCII</project.build.sourceEncoding>
     <atinjectVersion>1</atinjectVersion>
     <ivyVersion>2.5.0</ivyVersion>
-    <gradleVersion>4.5.1</gradleVersion>
+    <gradleVersion>4.6</gradleVersion>
     <groovyVersion>2.5.8</groovyVersion>
     <slf4jVersion>2.0.0-alpha7</slf4jVersion>
     <xmvnVersion>4.0.0</xmvnVersion>

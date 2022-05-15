@@ -25,7 +25,6 @@ import org.gradle.api.artifacts.ComponentMetadataSupplier;
 import org.gradle.api.artifacts.ModuleVersionIdentifier;
 import org.gradle.api.artifacts.component.ComponentArtifactIdentifier;
 import org.gradle.api.artifacts.component.ModuleComponentIdentifier;
-import org.gradle.api.internal.ExperimentalFeatures;
 import org.gradle.api.internal.artifacts.ImmutableModuleIdentifierFactory;
 import org.gradle.api.internal.artifacts.ivyservice.ivyresolve.ConfiguredModuleComponentRepository;
 import org.gradle.api.internal.artifacts.ivyservice.ivyresolve.ModuleComponentRepositoryAccess;
@@ -85,13 +84,12 @@ public class GradleResolver
     public GradleResolver( MetaDataParser<MutableMavenModuleResolveMetadata> pomParser,
                            ImmutableModuleIdentifierFactory moduleIdentifierFactory,
                            FileResourceRepository fileRepository, ImmutableAttributesFactory immutableAttributesFactory,
-                           NamedObjectInstantiator objectInstantiator, ExperimentalFeatures experimentalFeatures )
+                           NamedObjectInstantiator objectInstantiator )
     {
         this.pomParser = pomParser;
         this.moduleIdentifierFactory = moduleIdentifierFactory;
         this.fileRepository = fileRepository;
         this.immutableAttributesFactory = immutableAttributesFactory;
-        this.experimentalFeatures = experimentalFeatures;
         this.objectInstantiator = objectInstantiator;
     }
 
@@ -100,8 +98,6 @@ public class GradleResolver
     private ImmutableModuleIdentifierFactory moduleIdentifierFactory;
 
     private ImmutableAttributesFactory immutableAttributesFactory;
-
-    private ExperimentalFeatures experimentalFeatures;
 
     private NamedObjectInstantiator objectInstantiator;
 
@@ -236,8 +232,7 @@ public class GradleResolver
                     DefaultMutableMavenModuleResolveMetadata metaData =
                         new DefaultMutableMavenModuleResolveMetadata( mvi, id,
                                                                       Collections.<MavenDependencyDescriptor>emptyList(),
-                                                                      immutableAttributesFactory, objectInstantiator,
-                                                                      experimentalFeatures );
+                                                                      immutableAttributesFactory, objectInstantiator, false );
                     result.resolved( metaData.asImmutable() );
                     return;
                 }
